@@ -39,16 +39,23 @@ def main():
 
 def home():
     st.title("👋 Welcome to My Portfolio!")
-    st.image("Anant Gupta.jpg", width=350)  # Add your profile image
-    st.write("Hello! I'm Anant Gupta, a passionate Data Enthusiast. Here’s a little about me!")
+    st.image("Anant Gupta.jpg", width=350)
+    st.write("Hello! I'm Anant Gupta, a passionate Data Enthusiast.")
     
     st.markdown("""
     - 🎯 Experienced in Python, Data Science, and Web Development.
     - 💻 Love solving problems and building scalable solutions.
     - 🚀 Always learning new technologies.
-    
-    **📝 Download my Resume:** [Click Here](Anant-Resume.pdf)
     """)
+
+    # Resume Download Button
+    with open("Anant-Resume.pdf", "rb") as file:
+        st.download_button(
+            label="📄 Download My Resume",
+            data=file,
+            file_name="Anant-Resume.pdf",
+            mime="application/pdf"
+        )
 
 def projects():
     st.title("📂 My Projects")
